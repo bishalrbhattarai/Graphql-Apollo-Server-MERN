@@ -2,9 +2,11 @@ import express from "express";
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import axios from "axios";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 const server = new ApolloServer({
   typeDefs: `
         type Todo{
